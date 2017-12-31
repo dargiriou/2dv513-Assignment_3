@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="1228.0" stylesheets="@LibDb.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.BookRegController">
+   <left>
+      <AnchorPane id="anchorPane" prefHeight="580.0" prefWidth="237.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField id="member_id" fx:id="isbn" layoutX="13.0" layoutY="63.0" prefHeight="37.0" prefWidth="211.0" promptText="ISBN" AnchorPane.leftAnchor="13.0" AnchorPane.topAnchor="63.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="title" layoutX="13.0" layoutY="105.0" prefHeight="37.0" prefWidth="211.0" promptText="Title" AnchorPane.leftAnchor="13.0" AnchorPane.topAnchor="105.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="author" layoutX="13.0" layoutY="147.0" prefHeight="37.0" prefWidth="211.0" promptText="Author" AnchorPane.leftAnchor="13.0" AnchorPane.topAnchor="147.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="publisher" layoutX="13.0" layoutY="189.0" prefHeight="37.0" prefWidth="211.0" promptText="Publisher" AnchorPane.leftAnchor="13.0" AnchorPane.topAnchor="189.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="branch" layoutX="13.0" layoutY="230.0" prefHeight="37.0" prefWidth="211.0" promptText="Branch" AnchorPane.leftAnchor="13.0" AnchorPane.topAnchor="230.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="copies" layoutX="13.0" layoutY="272.0" prefHeight="37.0" prefWidth="211.0" promptText="Number of copies" AnchorPane.leftAnchor="13.0" AnchorPane.topAnchor="272.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Button id="sideBtn" fx:id="addBtn1" layoutX="12.0" layoutY="317.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="33.0" prefWidth="214.0" text="Add Entry" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="317.0" />
+            <Button id="sideBtn" fx:id="UpdateBtn" layoutX="12.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleUpdateButton" prefHeight="33.0" prefWidth="214.0" text="Update Entry" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="359.0" />
+            <Button id="sideBtn" fx:id="deleteBtn" layoutX="13.0" layoutY="405.0" mnemonicParsing="false" onAction="#handleDeleteButton" prefHeight="33.0" prefWidth="214.0" text="Delete Entry" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="401.0" />
+            <Button id="sideBtn" fx:id="clearBtn" layoutX="12.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleClearButton" prefHeight="33.0" prefWidth="214.0" text="Clear Form" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="442.0" />
+            <TextField fx:id="search" layoutX="14.0" layoutY="497.0" prefHeight="37.0" prefWidth="160.0" promptText="Search by" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="497.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <ChoiceBox id="choiceBox" fx:id="choiceBox1id" layoutX="14.0" layoutY="541.0" prefHeight="25.0" prefWidth="159.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="541.0" />
+            <Button id="sideBtn" fx:id="okBtn" layoutX="181.0" layoutY="516.0" mnemonicParsing="false" onAction="#okToSearch" prefHeight="36.0" prefWidth="43.0" text="Go" AnchorPane.leftAnchor="181.0" AnchorPane.topAnchor="516.0" />
+            <Label id="label" layoutX="88.0" layoutY="14.0" prefHeight="20.0" prefWidth="62.0" text="Books" textFill="#727070" AnchorPane.leftAnchor="88.0" AnchorPane.topAnchor="14.0">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Button id="reloadBtn" fx:id="reloadBtn" layoutX="12.0" layoutY="15.0" mnemonicParsing="false" onAction="#reloadButton" prefHeight="27.0" prefWidth="27.0" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="4.0" />
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <TableView fx:id="booksTable" prefHeight="581.0" prefWidth="1144.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn id="column" fx:id="isbnColumn" prefWidth="140.0" text="ISBN" />
+          <TableColumn id="column" fx:id="titleColumn" prefWidth="258.0" text="Title" />
+            <TableColumn id="column" fx:id="authorColumn" prefWidth="190.0" text="Author" />
+            <TableColumn id="column" fx:id="publisherColumn" prefWidth="191.0" text="Publisher" />
+            <TableColumn id="column" fx:id="branchColumn" prefWidth="142.0" text="Branch" />
+            <TableColumn id="column" fx:id="copiesColumn" minWidth="0.0" prefWidth="69.0" text="Copies" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>

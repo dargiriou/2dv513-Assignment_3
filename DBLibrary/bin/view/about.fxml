@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="aboutPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@LibDb.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.aboutController">
+   <center>
+      <AnchorPane id="anchorPane" fx:id="hyperlink" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="197.0" layoutY="14.0" text="About LibraryDB" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <TextArea layoutX="23.0" layoutY="64.0" prefHeight="77.0" prefWidth="567.0" text="This application was created for 2DV513 Database theory course, assignment 3.&#10;It simulates a library application as it creates and connects to a database that &#10;holds tables for books, members, authors, publishers and book reservations. For&#10;more information please visit the following github link:" />
+            <Hyperlink fx:id="hyperLink" layoutX="25.0" layoutY="141.0" prefHeight="6.0" prefWidth="564.0" text="https://github.com/dargiriou/2dv513_Assignment_3" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Hyperlink>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
