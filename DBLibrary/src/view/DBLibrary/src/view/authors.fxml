@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="authorsPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="967.0" stylesheets="@LibDb.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AuthorsController">
+   <left>
+      <AnchorPane id="anchorPane" prefHeight="536.0" prefWidth="301.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="sideBtn" fx:id="deleteBtn" layoutX="8.0" layoutY="294.0" mnemonicParsing="false" onAction="#handleDeleteBtn" prefHeight="92.0" prefWidth="286.0" text="Delete" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="294.0" />
+            <Label id="label" layoutX="112.0" layoutY="14.0" prefHeight="22.0" prefWidth="78.0" text="Authors" textAlignment="JUSTIFY" textFill="#908c8c" AnchorPane.leftAnchor="112.0" AnchorPane.topAnchor="14.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <TextField fx:id="search" layoutX="8.0" layoutY="462.0" prefHeight="45.0" prefWidth="220.0" promptText="Search name" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="462.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </TextField>
+            <Button id="sideBtn" fx:id="goBtn" layoutX="233.0" layoutY="462.0" mnemonicParsing="false" onAction="#handleGoButton" prefHeight="43.0" prefWidth="61.0" text="Go" AnchorPane.leftAnchor="233.0" AnchorPane.topAnchor="462.0" />
+            <ChoiceBox id="choiceBox" fx:id="choiceBoxAuthors" layoutX="10.0" layoutY="232.0" prefHeight="4.0" prefWidth="286.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="225.0" />
+            <Label id="label" layoutX="12.0" layoutY="188.0" prefHeight="39.0" prefWidth="282.0" text="Choose Author" textAlignment="JUSTIFY" textFill="#908c8c" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="186.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Button id="reloadBtn" fx:id="reloadBtn" layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onAction="#handleReloadButton" prefHeight="27.0" prefWidth="27.0" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="4.0" />
+            <TextField fx:id="nameField" layoutX="10.0" layoutY="82.0" prefHeight="45.0" prefWidth="286.0" promptText="Name" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="133.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <TableView fx:id="authorsTable" prefHeight="536.0" prefWidth="660.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn id="column" fx:id="nameColumn" prefWidth="330.0" text="Name" />
+          <TableColumn id="column" fx:id="isbnColumn" prefWidth="329.0" text="ISBN" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>

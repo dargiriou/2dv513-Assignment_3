@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox id="menu_navigationBar" minHeight="-Infinity" minWidth="-Infinity" prefHeight="619.0" prefWidth="1276.0" stylesheets="@LibDb.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainProgramUIController">
+  <children>
+    <MenuBar id="menuBar" prefHeight="30.0" prefWidth="1276.0" stylesheets="@LibDb.css" VBox.vgrow="ALWAYS">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" onAction="#handleQuit" text="Quit" />
+          </items>
+        </Menu>
+        <Menu fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#handleAbout" text="Help">
+          <items>
+            <MenuItem fx:id="about" mnemonicParsing="false" text="About LibraryDB" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane id="anchorPane" maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="1276.0" VBox.vgrow="ALWAYS">
+      <children>
+            <TableView fx:id="startingTable" layoutY="-2.0" prefHeight="516.0" prefWidth="1276.0" AnchorPane.bottomAnchor="73.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+              <columns>
+                <TableColumn id="column" fx:id="isbnColumn" prefWidth="202.0" text="ISBN" />
+                <TableColumn id="column" fx:id="titleColumn" prefWidth="272.0" text="Title" />
+                  <TableColumn id="column" fx:id="authorColumn" prefWidth="309.0" text="Author" />
+                  <TableColumn id="column" fx:id="branchColumn" prefWidth="263.0" text="Branch" />
+                  <TableColumn id="column" fx:id="statusColumn" prefWidth="227.0" text="Status" />
+              </columns>
+            </TableView>
+            <TextField fx:id="search" layoutX="20.0" layoutY="523.0" prefHeight="34.0" prefWidth="175.0" promptText="Search" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="20.0" />
+            <ChoiceBox id="choiceBox" fx:id="dropDownChoose" layoutX="20.0" layoutY="559.0" prefHeight="11.0" prefWidth="175.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="20.0" />
+            <Button id="bottomBtn" fx:id="goBtn" layoutX="207.0" layoutY="539.0" mnemonicParsing="false" onAction="#okToSearch" prefHeight="34.0" prefWidth="42.0" text="Go" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="203.0" />
+            <Button id="bottomBtn" fx:id="registerBooksBtn" layoutX="931.0" layoutY="532.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleRegisterBooksBtn" prefHeight="41.0" prefWidth="72.0" text="Books" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="273.0" />
+            <Button id="bottomBtn" fx:id="registerMembersBtn" layoutX="1011.0" layoutY="532.0" mnemonicParsing="false" onAction="#handleMembersButton" prefHeight="41.0" prefWidth="97.0" text="Members" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="168.0" />
+            <Button id="bottomBtn" fx:id="reservationsBtn" layoutX="1115.0" layoutY="532.0" mnemonicParsing="false" onAction="#handleReservationButton" prefHeight="41.0" prefWidth="121.0" text="Reservations" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="40.0" />
+            <Button id="reloadBtn" fx:id="reloadBtn" layoutX="1249.0" layoutY="539.0" mnemonicParsing="false" onAction="#reloadButton" prefHeight="27.0" prefWidth="27.0" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="5.0" />
+            <Button id="bottomBtn" fx:id="publishersBtn" layoutX="817.0" layoutY="532.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handlePublishersButton" prefHeight="41.0" prefWidth="106.0" text="Publishers" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="353.0" />
+            <Button id="bottomBtn" fx:id="authorsBtn" layoutX="723.0" layoutY="532.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAuthorsButton" prefHeight="41.0" prefWidth="84.0" text="Authors" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="469.0" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
